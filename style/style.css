@@ -24,7 +24,6 @@ body.dark-theme {
   --accent: #926bff;
   --accent-strong: #b28cff;
   --shadow: 0 28px 90px rgba(0, 0, 0, 0.38);
-    text-shadow: 0 0px 0px rgba(255, 0, 30, 0);
   --border: rgba(255, 255, 255, 0.12);
   --gradient: linear-gradient(135deg, rgba(109, 79, 215, 0.34), rgba(20, 24, 38, 0.96));
 }
@@ -49,6 +48,13 @@ body {
   transition: background 0.3s ease;
 }
 
+body.light-theme {
+  background: radial-gradient(circle at top left, rgba(126, 164, 142, 0.18), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(108, 119, 144, 0.14), transparent 32%),
+    url('images/background-images/forest-light-theme-background2.png') center/cover no-repeat,
+    var(--bg);
+}
+
 body.dark-theme {
   background: radial-gradient(circle at top left, rgba(124, 140, 226, 0.15), transparent 24%),
     radial-gradient(circle at bottom right, rgba(147, 104, 216, 0.12), transparent 28%),
@@ -60,6 +66,16 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.08) 100%
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+body.light-theme::before {
   background: linear-gradient(
     135deg,
     rgba(0, 0, 0, 0.2) 0%,

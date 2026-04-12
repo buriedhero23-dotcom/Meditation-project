@@ -18,10 +18,35 @@ body {
 
 .player-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   max-width: 500px;
+  gap: 20px;
+}
+
+.home-link {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.8);
+  color: #666;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.home-link:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  color: #667eea;
 }
 
 .player-card {
@@ -35,15 +60,8 @@ body {
   width: 100%;
 }
 
-.title {
-  font-size: 1.5rem;
-  font-weight: 300;
-  margin-bottom: 20px;
-  color: #555;
-}
-
 .track-info h2 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 400;
   margin-bottom: 30px;
   color: #666;
@@ -141,6 +159,19 @@ body {
   background: rgba(255, 255, 255, 0.5);
   outline: none;
   cursor: pointer;
+}
+
+.volume-slider::-webkit-slider-runnable-track {
+  background: rgba(255, 255, 255, 0.5);
+  height: 6px;
+  border-radius: 3px;
+}
+
+.volume-slider::-moz-range-track {
+  background: rgba(255, 255, 255, 0.5);
+  height: 6px;
+  border-radius: 3px;
+  border: none;
 }
 
 .volume-slider::-webkit-slider-thumb {
