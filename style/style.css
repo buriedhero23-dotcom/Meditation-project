@@ -395,31 +395,61 @@ body.dark-theme .testimonial {
 
 .scroll-nav {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
   background: var(--surface);
-  padding: 10px 20px;
-  border-radius: 999px;
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border);
+  padding: 12px 20px;
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+}
+
+body.dark-theme .scroll-nav {
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.3);
 }
 
 .scroll-btn {
   background: transparent;
   border: none;
-  color: var(--text);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+  color: var(--text-muted);
+  padding: 8px 16px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.25s ease;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.scroll-btn i {
+  font-size: 1.1rem;
 }
 
 .scroll-btn:hover {
+  background: rgba(95, 143, 120, 0.1);
+  color: var(--accent);
+}
+
+body.dark-theme .scroll-btn:hover {
+  background: rgba(146, 107, 255, 0.15);
+  color: var(--accent-strong);
+}
+
+.scroll-btn.active {
   background: var(--accent);
   color: #fff;
+}
+
+body.dark-theme .scroll-btn.active {
+  background: var(--accent-strong);
+  color: #000;
 }
 
 @media (max-width: 900px) {
@@ -435,18 +465,47 @@ body.dark-theme .testimonial {
   .steps-grid {
     grid-template-columns: 1fr;
   }
+}
 
+@media (max-width: 768px) {
   .scroll-nav {
-    flex-direction: column;
-    left: 20px;
-    transform: none;
-    bottom: 20px;
+    gap: 4px;
+    padding: 10px 12px;
+  }
+
+  .scroll-btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  .scroll-btn i {
+    font-size: 1rem;
+  }
+
+  .nav-label {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-nav {
+    gap: 2px;
+    padding: 8px 8px;
+  }
+
+  .scroll-btn {
+    padding: 6px 8px;
+    gap: 4px;
+  }
+
+  .scroll-btn i {
+    font-size: 0.95rem;
   }
 }
 
 @media (max-width: 640px) {
   .page-shell {
-    padding: 24px 18px 36px;
+    padding: 24px 18px 80px;
   }
 
   .hero-actions {

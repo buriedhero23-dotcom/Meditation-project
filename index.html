@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="style/style.css" />
 </head>
 <body class="light-theme">
@@ -104,13 +105,29 @@
   </main>
 
   <nav class="scroll-nav">
-    <button class="scroll-btn" data-target="hero">Главная</button>
-    <button class="scroll-btn" data-target="about">О нас</button>
-    <button class="scroll-btn" data-target="steps">Как использовать</button>
-    <button class="scroll-btn" data-target="testimonials">Отзывы</button>
-    <button class="scroll-btn" data-target="meditation">Медитация</button>
+    <button class="scroll-btn" data-target="hero" title="Главная">
+      <i class="fas fa-home"></i>
+      <span class="nav-label">Главная</span>
+    </button>
+    <button class="scroll-btn" data-target="about" title="О нас">
+      <i class="fas fa-circle-info"></i>
+      <span class="nav-label">О нас</span>
+    </button>
+    <button class="scroll-btn" data-target="steps" title="Как использовать">
+      <i class="fas fa-list-check"></i>
+      <span class="nav-label">Как использовать</span>
+    </button>
+    <button class="scroll-btn" data-target="testimonials" title="Отзывы">
+      <i class="fas fa-message"></i>
+      <span class="nav-label">Отзывы</span>
+    </button>
+    <button class="scroll-btn" data-target="meditation" title="Медитация">
+      <i class="fas fa-music"></i>
+      <span class="nav-label">Медитация</span>
+    </button>
   </nav>
 
   <script src="theme-style.js"></script>
+  <script src="scroll-nav.js"></script>
 </body>
 </html>
