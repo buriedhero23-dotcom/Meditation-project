@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style/style.css" />
 </head>
 <body class="light-theme">
   <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">🌙</button>
@@ -20,7 +20,7 @@
         <h1>Найдите спокойствие в каждом дыхании.</h1>
         <p class="introduce">Успокойте ум с мягким руководством, нежной атмосферой и спокойным цифровым пространством, предназначенным для отдыха.</p>
         <div class="hero-actions">
-          <a href="#meditation" class="btn btn-primary">Начать медитацию</a>
+          <a href="meditation-page.html" class="btn btn-primary">Начать медитацию</a>
           <a href="#about" class="btn btn-secondary">Узнать больше</a>
         </div>
       </div>
@@ -98,7 +98,7 @@
           <h2>Готовы к спокойной паузе?</h2>
           <p>Начните свою медитационную сессию сейчас и обнимите настоящее с успокаивающей атмосферой.</p>
         </div>
-        <a href="#" class="btn btn-primary btn-large">Перейти на страницу медитации</a>
+        <a href="meditation-page.html" class="btn btn-primary btn-large">Перейти на страницу медитации</a>
       </div>
     </section>
   </main>
@@ -112,14 +112,5 @@
   </nav>
 
   <script src="theme-style.js"></script>
-  <script>
-    // Кнопки скроллинга
-    document.querySelectorAll('.scroll-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const target = document.getElementById(btn.dataset.target);
-        target.scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-  </script>
 </body>
 </html>

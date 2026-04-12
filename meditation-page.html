@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Медитационная сессия</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="meditation-page.css">
+</head>
+<body>
+  <div class="player-container">
+    <div class="player-card">
+      <h1 class="title">Медитационная сессия</h1>
+      <div class="track-info">
+        <h2 id="trackTitle">Выберите трек</h2>
+      </div>
+      <div class="controls">
+        <button id="prevBtn" class="control-btn"><i class="fas fa-step-backward"></i></button>
+        <button id="playPauseBtn" class="control-btn play-btn"><i class="fas fa-play"></i></button>
+        <button id="nextBtn" class="control-btn"><i class="fas fa-step-forward"></i></button>
+      </div>
+      <div class="progress-section">
+        <div class="progress-container">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="time-display">
+          <span id="currentTime">0:00</span>
+          <span id="duration">0:00</span>
+        </div>
+      </div>
+      <div class="volume-section">
+        <i class="fas fa-volume-up volume-icon"></i>
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.5" class="volume-slider">
+      </div>
+      <audio id="meditationAudio" preload="metadata"></audio>
+    </div>
+  </div>
+  <script src="meditation-player.js"></script>
+</body>
+</html>
