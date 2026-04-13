@@ -12,11 +12,25 @@
   <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">🌙</button>
 
   <div class="player-container">
-    <a href="index.html" class="home-link">
-      <i class="fas fa-home"></i> На главную
-    </a>
+    <nav class="top-nav">
+      <a href="index.html" class="nav-btn">
+        <i class="fas fa-home"></i>
+        <span class="nav-text">На главную</span>
+      </a>
+      <a href="#" class="nav-btn">
+        <i class="fas fa-clock"></i>
+        <span class="nav-text">Таймер</span>
+      </a>
+      <a href="#" class="nav-btn">
+        <i class="fas fa-user-plus"></i>
+        <span class="nav-text">Добавить спикера</span>
+      </a>
+    </nav>
 
     <div class="player-card">
+      <img class="bg-flower-left" src="style/meditation-page-images/dark-theme-flowers-left.png" alt="Decorative flower left" />
+      <img class="bg-flower-right" src="style/meditation-page-images/dark-theme-flowers-right.png" alt="Decorative flower right" />
+
       <div class="track-info">
         <h2 id="trackTitle">Loading...</h2>
       </div>
