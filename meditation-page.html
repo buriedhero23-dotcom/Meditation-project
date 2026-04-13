@@ -6,9 +6,11 @@
   <title>Медитационная сессия</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <link rel="stylesheet" href="meditation-page.css" />
+  <link rel="stylesheet" href="style/meditation-page.css" />
 </head>
-<body>
+<body class="light-theme">
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">🌙</button>
+
   <div class="player-container">
     <a href="index.html" class="home-link">
       <i class="fas fa-home"></i> На главную
@@ -62,5 +64,6 @@
   </div>
 
   <script src="scripts/player.js"></script>
+  <script src="scripts/theme-style.js"></script>
 </body>
 </html>
