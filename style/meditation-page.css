@@ -434,6 +434,30 @@ body.dark-theme .time-display {
   gap: 12px;
 }
 
+.voice-volume-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.voice-volume-group .narrator-icon {
+  color: rgba(150, 120, 230, 0.85);
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.voice-volume-group .narrator-icon:hover {
+  color: var(--accent-light-2);
+  transform: translateX(1px);
+}
+
+.hidden {
+  display: none !important;
+}
+
 .volume-icon {
   color: var(--muted-light);
   font-size: 18px;

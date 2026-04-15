@@ -8,17 +8,29 @@ const progressContainer = document.getElementById("progressContainer");
 const currentTimeEl = document.getElementById("currentTime");
 const durationEl = document.getElementById("duration");
 const trackTitleEl = document.getElementById("trackTitle");
+const speakerToggleBtn = document.getElementById("speakerToggleBtn");
+const voiceAudio = document.getElementById("voiceAudio");
+const voiceVolumeSlider = document.getElementById("voiceVolumeSlider");
+const voiceVolumeGroup = document.getElementById("voiceVolumeGroup");
 
 const tracks = [
-  { title: "Deep Rest", src: "music/Deep-rest.mp3" },
   { title: "Breath & Flow", src: "music/Breath&Flow.mp3" },
 ];
+
+const voiceTracks = ["music/voice/medtation-voice-Jack.mp3"];
+let voiceEnabled = false;
 
 let currentTrackIndex = 0;
 
 function loadTrack(index) {
   audio.src = tracks[index].src;
   audio.load();
+
+  if (voiceEnabled) {
+    voiceAudio.src = voiceTracks[index] || voiceTracks[0];
+    voiceAudio.load();
+  }
+
   trackTitleEl.textContent = tracks[index].title;
   currentTimeEl.textContent = "0:00";
   durationEl.textContent = "0:00";
@@ -61,6 +73,31 @@ playPauseBtn.addEventListener("click", () => {
   }
 });
 
+speakerToggleBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  voiceEnabled = !voiceEnabled;
+  speakerToggleBtn.setAttribute("aria-pressed", String(voiceEnabled));
+  speakerToggleBtn.querySelector(".nav-text").textContent = voiceEnabled
+    ? "Выключить спикера"
+    : "Добавить спикера";
+  voiceVolumeGroup.classList.toggle("hidden", !voiceEnabled);
+
+  if (voiceEnabled) {
+    voiceAudio.src = voiceTracks[currentTrackIndex] || voiceTracks[0];
+    voiceAudio.load();
+    voiceAudio.volume = Number(voiceVolumeSlider.value);
+    updateVoiceVolumeSlider();
+    voiceAudio.currentTime = audio.currentTime;
+    if (!audio.paused) {
+      voiceAudio
+        .play()
+        .catch((error) => console.error("Voice playback error:", error));
+    }
+  } else {
+    voiceAudio.pause();
+  }
+});
+
 prevBtn.addEventListener("click", prevTrack);
 nextBtn.addEventListener("click", nextTrack);
 
@@ -70,8 +107,36 @@ volumeSlider.addEventListener("input", () => {
   updateVolumeSlider();
 });
 
+voiceVolumeSlider.addEventListener("input", () => {
+  voiceAudio.volume = Number(voiceVolumeSlider.value);
+  updateVoiceVolumeSlider();
+});
+
 // Progress bar
 audio.addEventListener("timeupdate", updateProgress);
+audio.addEventListener("timeupdate", () => {
+  if (!voiceEnabled) return;
+  if (isNaN(voiceAudio.duration)) return;
+
+  const diff = Math.abs(audio.currentTime - voiceAudio.currentTime);
+
+  if (diff > 0.4) {
+    voiceAudio.currentTime = audio.currentTime;
+  }
+});
+audio.addEventListener("play", () => {
+  if (!voiceEnabled) return;
+  voiceAudio.currentTime = audio.currentTime;
+  voiceAudio.volume = Number(voiceVolumeSlider.value);
+  voiceAudio
+    .play()
+    .catch((error) => console.error("Voice playback error:", error));
+});
+audio.addEventListener("pause", () => {
+  if (voiceEnabled) {
+    voiceAudio.pause();
+  }
+});
 
 audio.addEventListener("loadedmetadata", () => {
   if (!isNaN(audio.duration)) {
@@ -93,6 +158,9 @@ progressContainer.addEventListener("click", (e) => {
   const clickX = e.offsetX;
   const width = progressContainer.clientWidth;
   audio.currentTime = (clickX / width) * audio.duration;
+  if (voiceEnabled && !isNaN(voiceAudio.duration)) {
+    voiceAudio.currentTime = audio.currentTime;
+  }
 });
 
 // Time formatting
@@ -123,16 +191,46 @@ function updateVolumeSlider() {
   `;
 }
 
+function updateVoiceVolumeSlider() {
+  const value = Number(voiceVolumeSlider.value) * 100;
+  const isDark = document.body.classList.contains("dark-theme");
+
+  const activeStart = isDark ? "#7b4dff" : "#667eea";
+  const activeEnd = isDark ? "#c75cff" : "#8b5cf6";
+  const inactive = isDark
+    ? "rgba(255,255,255,0.12)"
+    : "rgba(255,255,255,0.45)";
+
+  voiceVolumeSlider.style.background = `
+    linear-gradient(
+      to right,
+      ${activeStart} 0%,
+      ${activeEnd} ${value}%,
+      ${inactive} ${value}%,
+      ${inactive} 100%
+    )
+  `;
+}
+
+function syncVoicePosition() {
+  if (!voiceEnabled || isNaN(audio.currentTime)) return;
+  if (!isNaN(voiceAudio.duration)) {
+    voiceAudio.currentTime = audio.currentTime;
+  }
+}
+
 audio.addEventListener("ended", nextTrack);
 
 // Initial setup
 audio.volume = Number(volumeSlider.value);
 loadTrack(currentTrackIndex);
 updateVolumeSlider();
+updateVoiceVolumeSlider();
 
 // Update slider colors after theme switch
 const observer = new MutationObserver(() => {
   updateVolumeSlider();
+  updateVoiceVolumeSlider();
 });
 
 observer.observe(document.body, {
