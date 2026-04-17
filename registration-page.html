@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create account | Meditation Space</title>
+  <meta
+    name="description"
+    content="Create your Meditation Space account to begin a calm and focused practice."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="style/auth.css" />
+  <link rel="stylesheet" href="style/registration-page.css">
+</head>
+<body class="light-theme">
+  <button
+    class="theme-toggle"
+    id="themeToggle"
+    type="button"
+    aria-label="Toggle theme"
+  >
+    🌙
+  </button>
+
+  <main class="auth-page">
+    <section class="auth-shell" aria-labelledby="register-title">
+      <a href="index.html" class="auth-back-link">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        <span>Back to homepage</span>
+      </a>
+
+      <div class="auth-card">
+        <div class="auth-card__header">
+          <span class="auth-card__eyebrow">Meditation Space</span>
+          <h1 class="auth-card__title" id="register-title">Create account</h1>
+          <p class="auth-card__subtitle">
+            Begin your calm digital space with a simple account for meditation,
+            focus, and rest.
+          </p>
+        </div>
+
+        <div
+          class="auth-message auth-message--hidden"
+          role="status"
+          aria-live="polite"
+        ></div>
+
+        <form class="auth-form" action="#" method="post" novalidate>
+          <div class="auth-form__group">
+            <label class="auth-form__label" for="email">Email</label>
+            <input
+              class="auth-form__input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="auth-form__group">
+            <label class="auth-form__label" for="password">Password</label>
+            <input
+              class="auth-form__input"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Create a password"
+              autocomplete="new-password"
+              required
+            />
+          </div>
+
+          <div class="auth-form__group">
+            <label class="auth-form__label" for="confirmPassword">
+              Confirm password
+            </label>
+            <input
+              class="auth-form__input"
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Repeat your password"
+              autocomplete="new-password"
+              required
+            />
+          </div>
+
+          <button class="auth-form__submit btn btn-primary" type="submit">
+            Create account
+          </button>
+        </form>
+
+        <p class="auth-card__footer">
+          Already have an account?
+          <a href="login.html" class="auth-card__link">Log in</a>
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+<script src="scripts/theme.js"></script>
+</html>
