@@ -14,10 +14,10 @@ const voiceVolumeSlider = document.getElementById("voiceVolumeSlider");
 const voiceVolumeGroup = document.getElementById("voiceVolumeGroup");
 
 const tracks = [
-  { title: "Breath & Flow", src: "music/Breath&Flow.mp3" },
+  { title: "Breath & Flow", src: "https://fxznwobjtttsqyokzdex.supabase.co/storage/v1/object/public/audio/music/Breath-and-Flow.mp3" },
 ];
 
-const voiceTracks = ["music/voice/medtation-voice-Jack.mp3"];
+const voiceTracks = ["https://fxznwobjtttsqyokzdex.supabase.co/storage/v1/object/public/audio/voice/medtation-voice-Jack.mp3"];
 let voiceEnabled = false;
 
 let currentTrackIndex = 0;
