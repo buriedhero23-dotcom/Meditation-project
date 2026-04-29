@@ -18,8 +18,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   />
-  <link rel="stylesheet" href="style/auth.css" />
-  <link rel="stylesheet" href="style/registration-page.css">
+  <link rel="stylesheet" href="style/login.css">
 </head>
 <body class="light-theme">
   <button
@@ -54,52 +53,65 @@
           aria-live="polite"
         ></div>
 
-        <form class="auth-form" action="#" method="post" novalidate>
-          <div class="auth-form__group">
-            <label class="auth-form__label" for="email">Email</label>
-            <input
-              class="auth-form__input"
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-              autocomplete="email"
-              required
-            />
-          </div>
+        <form class="auth-form" id="registerForm" novalidate>
+  <div class="auth-form__group">
+    <label class="auth-form__label" for="fullName">Full Name</label>
+    <input
+      class="auth-form__input"
+      type="text"
+      id="fullName"
+      name="fullName"
+      placeholder="Enter your full name"
+      autocomplete="name"
+      required
+    />
+  </div>
 
-          <div class="auth-form__group">
-            <label class="auth-form__label" for="password">Password</label>
-            <input
-              class="auth-form__input"
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Create a password"
-              autocomplete="new-password"
-              required
-            />
-          </div>
+  <div class="auth-form__group">
+    <label class="auth-form__label" for="email">Email</label>
+    <input
+      class="auth-form__input"
+      type="email"
+      id="email"
+      name="email"
+      placeholder="Enter your email"
+      autocomplete="email"
+      required
+    />
+  </div>
 
-          <div class="auth-form__group">
-            <label class="auth-form__label" for="confirmPassword">
-              Confirm password
-            </label>
-            <input
-              class="auth-form__input"
-              type="password"
-              id="confirmPassword"
-              name="confirmPassword"
-              placeholder="Repeat your password"
-              autocomplete="new-password"
-              required
-            />
-          </div>
+  <div class="auth-form__group">
+    <label class="auth-form__label" for="password">Password</label>
+    <input
+      class="auth-form__input"
+      type="password"
+      id="password"
+      name="password"
+      placeholder="Create a password"
+      autocomplete="new-password"
+      required
+    />
+  </div>
 
-          <button class="auth-form__submit btn btn-primary" type="submit">
-            Create account
-          </button>
-        </form>
+  <div class="auth-form__group">
+    <label class="auth-form__label" for="confirmPassword">
+      Confirm password
+    </label>
+    <input
+      class="auth-form__input"
+      type="password"
+      id="confirmPassword"
+      name="confirmPassword"
+      placeholder="Repeat your password"
+      autocomplete="new-password"
+      required
+    />
+  </div>
+
+  <button class="auth-form__submit btn btn-primary" type="submit">
+    Create account
+  </button>
+</form>
 
         <p class="auth-card__footer">
           Already have an account?
@@ -110,4 +122,7 @@
   </main>
 </body>
 <script src="scripts/theme.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="scripts/supabase-client.js"></script>
+<script src="scripts/auth.js"></script>
 </html>
