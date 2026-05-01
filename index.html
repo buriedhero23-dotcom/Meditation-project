@@ -12,6 +12,20 @@
   <link rel="stylesheet" href="style/style.css" />
 </head>
 <body class="light-theme">
+  <div class="user-panel" aria-label="User account">
+    <div class="user-avatar" aria-hidden="true">B</div>
+    <span class="user-name">Biba Ziba</span>
+    <button class="user-menu-btn" type="button" aria-label="Open user menu">
+      <i class="fas fa-chevron-down" aria-hidden="true"></i>
+    </button>
+
+    <div class="user-dropdown hidden">
+      <a href="#" class="user-dropdown-item">My profile</a>
+      <button class="user-dropdown-item logout-btn" type="button">Log out</button>
+      <a href="#" class="user-dropdown-item">FAQ</a>
+    </div>
+  </div>
+  
   <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">🌙</button>
 
   <main class="page-shell">
@@ -21,7 +35,8 @@
         <h1>Найдите спокойствие в каждом дыхании.</h1>
         <p class="introduce">Успокойте ум с мягким руководством, нежной атмосферой и спокойным цифровым пространством, предназначенным для отдыха.</p>
         <div class="hero-actions">
-          <a href="registration-page.html" class="btn btn-primary">Начать медитацию</a>
+          <a href="#" id="meditationStartBtn" class="btn btn-primary">
+            Начать медитацию</a>
           <a href="#about" class="btn btn-secondary">Узнать больше</a>
         </div>
       </div>
@@ -99,7 +114,8 @@
           <h2>Готовы к спокойной паузе?</h2>
           <p>Начните свою медитационную сессию сейчас и обнимите настоящее с успокаивающей атмосферой.</p>
         </div>
-        <a href="meditation-page.html" class="btn btn-primary btn-large">Перейти на страницу медитации</a>
+        <a href="#" class="btn btn-primary btn-large  meditation-start-btn">
+          Перейти на страницу медитации</a>
       </div>
     </section>
   </main>
@@ -129,5 +145,9 @@
 
   <script src="scripts/theme.js"></script>
   <script src="scripts/scroll-nav.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="scripts/supabase-client.js"></script>
+  <script src="scripts/session-ui.js"></script>
+  <script src="scripts/home-redirect.js"></script>
 </body>
 </html>
