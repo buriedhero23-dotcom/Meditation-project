@@ -761,3 +761,13 @@ body.dark-theme .logout-btn:hover {
   background: rgba(248, 113, 113, 0.12);
   color: #fecaca;
 }
+
+.user-avatar {
+  overflow: hidden;
+}
+
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

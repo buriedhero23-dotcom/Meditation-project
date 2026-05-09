@@ -11,18 +11,42 @@ const updateSessionUI = async () => {
   if (session) {
     const displayName =
       session.user.user_metadata.full_name || session.user.email;
+
+    const avatarUrl = session.user.user_metadata.avatar_url;
     const avatarLetter = displayName.charAt(0).toUpperCase();
 
-    if (userPanel) userPanel.style.display = "inline-flex";
-    if (userName) userName.textContent = displayName;
-    if (userAvatar) userAvatar.textContent = avatarLetter;
-    if (authLinks) authLinks.style.display = "none";
+    if (userPanel) {
+      userPanel.style.display = "inline-flex";
+    }
+
+    if (userName) {
+      userName.textContent = displayName;
+    }
+
+    if (userAvatar) {
+      if (avatarUrl) {
+        userAvatar.innerHTML = `
+          <img src="${avatarUrl}" alt="User avatar" />
+        `;
+      } else {
+        userAvatar.textContent = avatarLetter;
+      }
+    }
+
+    if (authLinks) {
+      authLinks.style.display = "none";
+    }
 
     return;
   }
 
-  if (userPanel) userPanel.style.display = "none";
-  if (authLinks) authLinks.style.display = "";
+  if (userPanel) {
+    userPanel.style.display = "none";
+  }
+
+  if (authLinks) {
+    authLinks.style.display = "";
+  }
 };
 
 const initUserDropdown = () => {

@@ -18,7 +18,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   />
-  <link rel="stylesheet" href="style/login.css">
+  <link rel="stylesheet" href="style/registration-page.css">
 </head>
 <body class="light-theme">
   <button
@@ -46,6 +46,25 @@
             focus, and rest.
           </p>
         </div>
+
+    <div class="avatar-upload-block">
+      <div class="avatar-preview" aria-label="Avatar preview">
+        <i class="fas fa-user" aria-hidden="true"></i>
+      </div>
+
+      <input
+        class="avatar-input"
+        type="file"
+        id="avatarInput"
+        name="avatar"
+        accept="image/*"
+        hidden
+      />
+
+      <button class="avatar-upload-btn" type="button">
+        Upload avatar
+      </button>
+  </div>
 
         <div
           class="auth-message auth-message--hidden"
