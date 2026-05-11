@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile | Meditation Space</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="style/profile.css" />
+</head>
+
+<body class="dark-theme">
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+  🌙
+  </button>
+  <main class="profile-page">
+    <section class="profile-card" aria-labelledby="profileTitle">
+      <div class="profile-avatar-wrap">
+        <img
+          class="profile-avatar"
+          id="profileAvatar"
+          src="images/avatars/default-avatar.png"
+          alt="User avatar"
+        />
+
+        <button class="avatar-edit-btn" type="button">
+          <i class="fas fa-camera" aria-hidden="true"></i>
+          Change avatar
+        </button>
+
+        <input id="avatarInput" type="file" accept="image/*" hidden />
+      </div>
+
+      <div class="profile-info">
+        <p class="profile-eyebrow">Meditation Space</p>
+        <h1 class="profile-name" id="profileTitle">Loading...</h1>
+        <p class="profile-email">Loading email...</p>
+        <p class="profile-date">Member since —</p>
+      </div>
+
+      <form class="profile-form">
+        <div class="profile-form__group">
+          <label class="profile-form__label" for="fullNameInput">
+            Full name
+          </label>
+          <input
+            class="profile-form__input"
+            type="text"
+            id="fullNameInput"
+            name="fullName"
+            placeholder="Enter your full name"
+            autocomplete="name"
+          />
+        </div>
+
+        <button class="profile-save-btn" type="submit">
+          Save changes
+        </button>
+      </form>
+
+      <div class="profile-actions">
+        <a href="index.html" class="profile-link-btn">
+          <i class="fas fa-arrow-left" aria-hidden="true"></i>
+          Homepage
+        </a>
+
+        <a href="meditation-page.html" class="profile-link-btn">
+          <i class="fas fa-music" aria-hidden="true"></i>
+          Meditation
+        </a>
+
+        <button class="profile-logout-btn" type="button">
+          <i class="fas fa-right-from-bracket" aria-hidden="true"></i>
+          Log out
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="scripts/supabase-client.js"></script>
+  <script src="scripts/theme.js"></script>
+  <script src="scripts/profile.js"></script>
+</body>
+</html>
