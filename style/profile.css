@@ -27,10 +27,85 @@
     border-color 0.45s ease,
     box-shadow 0.45s ease,
     transform 0.25s ease;
+
+    --bg-light: linear-gradient(135deg, #eef3ff 0%, #f8f5ff 100%);
+    --card-light: rgba(255, 255, 255, 0.88);
+    --text-light: #232033;
+    --muted-light: #6f6a7d;
+    --accent-light-1: #5f6fee;
+    --accent-light-2: #7c4dff;
+    --border-light: rgba(95, 111, 238, 0.16);
+    --shadow-light: 0 20px 48px rgba(56, 48, 92, 0.12);
+    --input-light: rgba(255, 255, 255, 0.92);
+    --btn-light: rgba(255, 255, 255, 0.86);
 }
 
 * {
   box-sizing: border-box;
+}
+
+body.light-theme {
+  background: var(--bg-light);
+  color: var(--text-light);
+}
+
+body.light-theme .profile-card {
+  background: var(--card-light);
+  border-color: var(--border-light);
+  box-shadow: var(--shadow-light);
+}
+
+body.light-theme .profile-eyebrow {
+  color: var(--accent-light-2);
+  background: rgba(124, 77, 255, 0.09);
+}
+
+body.light-theme .profile-name,
+body.light-theme .profile-form__label {
+  color: var(--text-light);
+}
+
+body.light-theme .profile-email,
+body.light-theme .profile-date {
+  color: var(--muted-light);
+}
+
+body.light-theme .profile-form__input {
+  background: var(--input-light);
+  color: var(--text-light);
+  border-color: rgba(95, 111, 238, 0.18);
+}
+
+body.light-theme .profile-form__input::placeholder {
+  color: rgba(111, 106, 125, 0.7);
+}
+
+body.light-theme .avatar-edit-btn,
+body.light-theme .profile-save-btn {
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent-light-1), var(--accent-light-2));
+  box-shadow: 0 18px 34px rgba(95, 111, 238, 0.24);
+}
+
+body.light-theme .profile-link-btn {
+  color: var(--text-light);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(95, 111, 238, 0.14);
+  box-shadow: 0 14px 28px rgba(56, 48, 92, 0.08);
+}
+
+body.light-theme .profile-logout-btn {
+  color: #c2410c;
+  background: rgba(255, 237, 213, 0.9);
+  border-color: rgba(251, 146, 60, 0.28);
+  box-shadow: 0 14px 28px rgba(194, 65, 12, 0.08);
+}
+
+body.light-theme .theme-toggle {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--accent-light-2);
+  border-color: rgba(95, 111, 238, 0.16);
+  box-shadow: var(--shadow-light);
 }
 
 body {

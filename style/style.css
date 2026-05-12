@@ -74,7 +74,8 @@ body.dark-theme {
   font-size: 1.2rem;
   cursor: pointer;
   box-shadow: var(--shadow-light);
-  transition: var(--transition-theme), transform 0.25s ease;
+  font-size: 1rem;
+  transition: 0.25s ease;
 }
 
 body.dark-theme .theme-toggle {

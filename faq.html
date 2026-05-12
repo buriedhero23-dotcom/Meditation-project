@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | Meditation Space</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="style/faq.css" />
+</head>
+
+<body class="light-theme">
+  <main class="faq-page">
+    <section class="faq-shell">
+      <header class="faq-header">
+        <a href="index.html" class="faq-back-link">
+          <i class="fas fa-arrow-left" aria-hidden="true"></i>
+          Back to homepage
+        </a>
+
+        <div class="faq-title-block">
+          <p class="faq-eyebrow">Meditation Space</p>
+          <h1>FAQ</h1>
+          <p>
+            Simple answers about accounts, profile data, avatars, and protected meditation access.
+          </p>
+        </div>
+      </header>
+
+      <section class="faq-list" aria-label="Frequently asked questions">
+        <article class="faq-card">
+          <h2>What is Meditation Space?</h2>
+          <p>
+            Meditation Space is a calm web app for meditation, relaxation, and mindful breathing.
+            It gives you a soft digital place where you can slow down, listen to peaceful audio,
+            and take a quiet break from your day.
+          </p>
+        </article>
+
+        <article class="faq-card">
+          <h2>Do I need an account?</h2>
+          <p>
+            Yes. An account is needed to access the meditation page and save your profile data,
+            such as your name and avatar.
+          </p>
+        </article>
+
+        <article class="faq-card">
+          <h2>Why do I need to sign up?</h2>
+          <p>
+            Registration lets the app recognize you, show your personal profile, display your avatar,
+            and keep your session active when you return.
+          </p>
+        </article>
+
+        <article class="faq-card">
+          <h2>How is my avatar stored?</h2>
+          <p>
+            Your avatar image is uploaded to Supabase Storage. After upload, the public avatar URL is
+            saved in your user profile metadata so the app can display it on your profile page.
+          </p>
+        </article>
+
+        <article class="faq-card">
+          <h2>Can I change my profile data?</h2>
+          <p>
+            Yes. You can change your full name and avatar from the profile page. After saving,
+            the updated data is shown in your profile.
+          </p>
+        </article>
+
+        <article class="faq-card">
+          <h2>Can I use the meditation page without login?</h2>
+          <p>
+            No. The meditation page is protected. If you are not logged in, the app redirects you
+            to the login page.
+          </p>
+        </article>
+
+        <article class="faq-card">
+          <h2>What should I do if login does not work?</h2>
+          <p>
+            First, check that your email and password are correct. If you do not have an account yet,
+            create one on the registration page and then try logging in again.
+          </p>
+        </article>
+
+        <article class="faq-card">
+          <h2>Is my data safe?</h2>
+          <p>
+            Authentication is handled through Supabase. Access is controlled with session checks and
+            storage policies, so users should only access their own protected data.
+          </p>
+        </article>
+
+        <article class="faq-card">
+          <h2>How do I log out?</h2>
+          <p>
+            You can log out from the account dropdown or from the profile page using the Log out button.
+          </p>
+        </article>
+      </section>
+
+      <div class="faq-actions">
+        <a href="profile.html" class="faq-profile-link">
+          <i class="fas fa-user" aria-hidden="true"></i>
+          Back to profile
+        </a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

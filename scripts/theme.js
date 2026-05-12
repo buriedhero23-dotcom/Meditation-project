@@ -13,9 +13,9 @@ if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
 const updateToggleIcon = () => {
   if (!themeToggle) return;
 
-  themeToggle.textContent = document.body.classList.contains("dark-theme")
-    ? "☀️"
-    : "🌙";
+  themeToggle.innerHTML = document.body.classList.contains("dark-theme")
+    ? '<i class="fas fa-sun"></i>'
+    : '<i class="fas fa-moon"></i>';
 };
 
 updateToggleIcon();
