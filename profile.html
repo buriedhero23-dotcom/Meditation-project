@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,30 +8,20 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="style/profile.css" />
 </head>
 
 <body class="dark-theme">
   <button class="theme-toggle" id="themeToggle" type="button">
-  <i class="fas fa-moon"></i>
+    <i class="fas fa-moon"></i>
   </button>
   <main class="profile-page">
     <section class="profile-card" aria-labelledby="profileTitle">
       <div class="profile-avatar-wrap">
-        <img
-          class="profile-avatar"
-          id="profileAvatar"
-          src="images/avatars/default-avatar.png"
-          alt="User avatar"
-        />
+        <img class="profile-avatar" id="profileAvatar" src="images/avatars/default-avatar.png" alt="User avatar" />
 
         <button class="avatar-edit-btn" type="button">
           <i class="fas fa-camera" aria-hidden="true"></i>
@@ -52,14 +43,8 @@
           <label class="profile-form__label" for="fullNameInput">
             Full name
           </label>
-          <input
-            class="profile-form__input"
-            type="text"
-            id="fullNameInput"
-            name="fullName"
-            placeholder="Enter your full name"
-            autocomplete="name"
-          />
+          <input class="profile-form__input" type="text" id="fullNameInput" name="fullName"
+            placeholder="Enter your full name" autocomplete="name" />
         </div>
 
         <button class="profile-save-btn" type="submit">
@@ -91,4 +76,5 @@
   <script src="scripts/theme.js"></script>
   <script src="scripts/profile.js"></script>
 </body>
+
 </html>
