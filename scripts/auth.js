@@ -53,7 +53,7 @@ form.addEventListener("submit", async (e) => {
     email,
     password,
     options: {
-      emailRedirectTo: "http://127.0.0.1:5500/Meditation-project/login.html",
+      emailRedirectTo:"https://buriedhero23-dotcom.github.io/Meditation-project/meditation-page.html",
       data: {
         full_name: fullName,
       },
