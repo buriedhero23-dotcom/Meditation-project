@@ -1,16 +1,29 @@
 const loginForm = document.querySelector(".auth-form");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
-const messageBlock = document.querySelector(".auth-message");
+const errorBlock = document.querySelector(".auth-error");
+const errorText = document.querySelector(".auth-error-text");
+const forgotLink = document.querySelector(".forgot-password-link");
 
 const showErrorMessage = (message) => {
-  messageBlock.textContent = message;
-  messageBlock.classList.remove("auth-message--hidden");
+  if (!errorBlock) return;
+  errorText.textContent = message;
+  errorBlock.classList.remove("auth-error--hidden");
+  // trigger animation-visible state
+  requestAnimationFrame(() => errorBlock.classList.add("auth-error--visible"));
+  if (forgotLink) {
+    forgotLink.style.display = "inline-block";
+  }
 };
 
 const hideErrorMessage = () => {
-  messageBlock.textContent = "";
-  messageBlock.classList.add("auth-message--hidden");
+  if (!errorBlock) return;
+  errorText.textContent = "";
+  errorBlock.classList.remove("auth-error--visible");
+  errorBlock.classList.add("auth-error--hidden");
+  if (forgotLink) {
+    forgotLink.style.display = "none";
+  }
 };
 
 loginForm.addEventListener("submit", async (e) => {

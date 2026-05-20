@@ -344,6 +344,73 @@ body.dark-theme .auth-message--error {
   color: #fecaca;
 }
 
+/* Reusable auth error block (visible after failed attempts) */
+.auth-error {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border: 1px solid transparent;
+  background: var(--error-bg-light);
+  color: #7f1d1d;
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.06);
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: var(--transition-theme), transform 0.36s cubic-bezier(.2,.9,.2,1);
+}
+
+.auth-error--hidden {
+  display: none;
+}
+
+.auth-error--visible {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.auth-error-text {
+  margin: 0;
+  color: #7f1d1d;
+}
+
+.forgot-password-link {
+  align-self: flex-start;
+  color: #b91c1c;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(239,68,68,0.06);
+  transition: var(--transition-theme), transform 0.18s ease;
+  display: none;
+}
+
+.forgot-password-link:hover {
+  transform: translateY(-2px);
+  text-decoration: underline;
+}
+
+body.dark-theme .auth-error {
+  background: var(--error-bg-dark);
+  border-color: rgba(248, 113, 113, 0.12);
+  color: #fecaca;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.38);
+}
+
+body.dark-theme .auth-error-text {
+  color: #fecaca;
+}
+
+body.dark-theme .forgot-password-link {
+  color: #ffd4d6;
+  background: rgba(248,113,113,0.04);
+}
+
 .auth-card__footer {
   margin: 20px 0 0;
   text-align: center;
